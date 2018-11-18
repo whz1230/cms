@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kodinger">
+    <title>内容管理系统－ＣＭＳ</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/my-login.css">
+</head>
+<body class="my-login-page">
+<section class="h-100">
+    <div class="container h-100">
+        <div class="row justify-content-md-center h-100">
+            <div class="card-wrapper">
+                <div class="card fat">
+                    <div class="card-body">
+                        <h4 class="card-title">内容管理系统－ＣＭＳ</h4>
+                        <form method="POST" action="/CMS/user/login">
+                            <div class="form-group">
+                                <label for="email">用户名</label>
+                                <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">密码
+                                    <a href="forgot.html" class="float-right">忘记密码？</a>
+                                </label>
+                                <input id="password" type="password" class="form-control" name="password" required data-eye>
+                            </div>
+                            <div class="form-group">
+                                <label for="vcode">验证码</label>
+                                <div class="fath">
+                                    <input id="vcode" type="text" class="form-control" name="vcode" value="" required autofocus style="width: 230px;">&nbsp;
+                                    <img src="/CMS/user/getValcode" alt="验证码">
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" name="remember">记住密码
+                                </label>
+                            </div>
+                            <div class="form-group no-margin">
+                                <button type="submit" class="btn btn-primary btn-block">登录</button>
+                            </div>
+                            <div class="margin-top20 text-center">
+                                还没有账号? <a href="register.html">注册</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer">
+                    Copyright &copy; www.alpha.com 2018
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/my-login.js"></script>
+</body>
+</html>
