@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="button" name="" value="开始" @click="start">
+    <input type="button" name="" value="停止" @click="stop">
+    <h4>{{msg}}</h4>
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: "欢迎光临~~",
+            intervalId: null
+        },
+        methods: {
+            start() {
+                if (this.intervalId != null) return;
+                this.intervalId = setInterval(() => {
+                    // 获取第一个字符
+                    var start = this.msg.substring(0, 1);
+                    // 获取后面字符
+                    var end = this.msg.substring(1);
+                    // 重新拼接的到新的字符串，并赋值给this.msg
+                    this.msg = end + start;
+                },200)
+            },
+            stop() {
+                clearInterval(this.intervalId);
+                // 每当清除了定时器，需要重新赋值为null
+                this.intervalId = null;
+            }
+        }
+    })
+</script>
+</body>
+</html>
